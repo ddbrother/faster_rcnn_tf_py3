@@ -46,6 +46,8 @@ def vis_detections(im, class_name, dets, filename, thresh=0.5):
         print(pt2)
         print(color)
         cv2.rectangle(im, pt1, pt2, color, thickness=2)
+        cv2.putText(img=im, text='{:s} {:.3f}'.format(class_name, score), org=(bbox[0], bbox[1] - 2), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=0.5,
+                    color=[255, 0, 0])
         # ax.text(bbox[0], bbox[1] - 2,
         #         '{:s} {:.3f}'.format(class_name, score),
         #         bbox=dict(facecolor='blue', alpha=0.5),
