@@ -39,8 +39,8 @@ def vis_detections(im, class_name, dets, filename, thresh=0.5):
         #                   bbox[3] - bbox[1], fill=False,
         #                   edgecolor='red', linewidth=3.5)
         #     )
-        pt1 = (bbox[1], bbox[0])
-        pt2 = (bbox[3], bbox[2])
+        pt1 = (bbox[0], bbox[1])
+        pt2 = (bbox[2], bbox[3])
         color = (0, 255, 0)
         print(pt1)
         print(pt2)

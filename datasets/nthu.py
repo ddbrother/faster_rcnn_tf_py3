@@ -10,7 +10,7 @@ import scipy.sparse
 from utils.cython_bbox import bbox_overlaps
 from utils.boxes_grid import get_boxes_grid
 import subprocess
-import cPickle
+import pickle
 from fast_rcnn.config import cfg
 import math
 from rpn_msr.generate_anchors import generate_anchors
@@ -117,19 +117,19 @@ class nthu(datasets.imdb):
 
         if os.path.exists(cache_file):
             with open(cache_file, 'rb') as fid:
-                roidb = cPickle.load(fid)
-            print '{} roidb loaded from {}'.format(self.name, cache_file)
+                roidb = pickle.load(fid)
+            print('{} roidb loaded from {}'.format(self.name, cache_file))
             return roidb
 
-        print 'Loading region proposal network boxes...'
+        print('Loading region proposal network boxes...')
         model = cfg.REGION_PROPOSAL
         roidb = self._load_rpn_roidb(None, model)
-        print 'Region proposal network boxes loaded'
-        print '{} region proposals per image'.format(self._num_boxes_proposal / len(self.image_index))
+        print('Region proposal network boxes loaded')
+        print('{} region proposals per image'.format(self._num_boxes_proposal / len(self.image_index)))
 
         with open(cache_file, 'wb') as fid:
-            cPickle.dump(roidb, fid, cPickle.HIGHEST_PROTOCOL)
-        print 'wrote roidb to {}'.format(cache_file)
+            pickle.dump(roidb, fid, pickle.HIGHEST_PROTOCOL)
+        print('wrote roidb to {}'.format(cache_file))
 
         return roidb
 
@@ -177,7 +177,7 @@ class nthu(datasets.imdb):
         # for each image
         for im_ind, index in enumerate(self.image_index):
             filename = os.path.join(output_dir, index + '.txt')
-            print 'Writing nthu results to file ' + filename
+            print('Writing nthu results to file ' + filename)
             with open(filename, 'wt') as f:
                 # for each class
                 for cls_ind, cls in enumerate(self.classes):
@@ -198,7 +198,7 @@ class nthu(datasets.imdb):
     def evaluate_detections_one_file(self, all_boxes, output_dir):
         # open results file
         filename = os.path.join(output_dir, 'detections.txt')
-        print 'Writing all nthu results to file ' + filename
+        print('Writing all nthu results to file ' + filename)
         with open(filename, 'wt') as f:
             # for each image
             for im_ind, index in enumerate(self.image_index):
@@ -220,7 +220,7 @@ class nthu(datasets.imdb):
         # for each image
         for im_ind, index in enumerate(self.image_index):
             filename = os.path.join(output_dir, index + '.txt')
-            print 'Writing nthu results to file ' + filename
+            print('Writing nthu results to file ' + filename)
             with open(filename, 'wt') as f:
                 # for each class
                 for cls_ind, cls in enumerate(self.classes):
@@ -237,7 +237,7 @@ class nthu(datasets.imdb):
         # for each image
         for im_ind, index in enumerate(self.image_index):
             filename = os.path.join(output_dir, index + '.txt')
-            print 'Writing nthu results to file ' + filename
+            print('Writing nthu results to file ' + filename)
             with open(filename, 'wt') as f:
                 dets = all_boxes[im_ind]
                 if dets == []:
@@ -249,4 +249,4 @@ class nthu(datasets.imdb):
 if __name__ == '__main__':
     d = datasets.nthu('71')
     res = d.roidb
-    from IPython import embed; embed()
+    # from IPython import embed; embed()
