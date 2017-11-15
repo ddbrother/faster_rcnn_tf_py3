@@ -48,7 +48,7 @@ class SolverWrapper(object):
         """
         net = self.net
 
-        if cfg.TRAIN.BBOX_REG and net.layers.has_key('bbox_pred'):
+        if cfg.TRAIN.BBOX_REG and 'bbox_pred' in net.layers:
             # save original values
             with tf.variable_scope('bbox_pred', reuse=True):
                 weights = tf.get_variable("weights")
@@ -75,7 +75,7 @@ class SolverWrapper(object):
         self.saver.save(sess, filename)
         print('Wrote snapshot to: {:s}'.format(filename))
 
-        if cfg.TRAIN.BBOX_REG and net.layers.has_key('bbox_pred'):
+        if cfg.TRAIN.BBOX_REG and 'bbox_pred' in net.layers:
             with tf.variable_scope('bbox_pred', reuse=True):
                 # restore net to original state
                 sess.run(net.bbox_weights_assign, feed_dict={net.bbox_weights: orig_0})

@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9fec585-2683-44e0-885a-34e0525aa6cb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test_net.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/train_net.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/tffasterrcnn.iml" afterPath="$PROJECT_DIR$/.idea/tffasterrcnn.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/networks/network.py" afterPath="$PROJECT_DIR$/networks/network.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rpn_msr/proposal_target_layer_tf.py" afterPath="$PROJECT_DIR$/rpn_msr/proposal_target_layer_tf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fast_rcnn/train.py" afterPath="$PROJECT_DIR$/fast_rcnn/train.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="train.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fast_rcnn/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-901">
-              <caret line="205" column="0" lean-forward="true" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
+            <state relative-caret-position="1386">
+              <caret line="77" column="59" lean-forward="false" selection-start-line="77" selection-start-column="59" selection-end-line="77" selection-end-column="59" />
               <folding>
                 <element signature="e#284#316#0" expanded="true" />
               </folding>
@@ -39,7 +33,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_net.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_net.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/test_net.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1457">
@@ -184,10 +178,10 @@
         <option value="$PROJECT_DIR$/datasets/factory.py" />
         <option value="$PROJECT_DIR$/demo.py" />
         <option value="$PROJECT_DIR$/testbo.py" />
-        <option value="$PROJECT_DIR$/fast_rcnn/train.py" />
         <option value="$PROJECT_DIR$/networks/network.py" />
         <option value="$PROJECT_DIR$/rpn_msr/proposal_target_layer_tf.py" />
         <option value="$PROJECT_DIR$/test_net.py" />
+        <option value="$PROJECT_DIR$/fast_rcnn/train.py" />
       </list>
     </option>
   </component>
@@ -227,6 +221,11 @@
             <path>
               <item name="tffasterrcnn" type="b2602c69:ProjectViewProjectNode" />
               <item name="tffasterrcnn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tffasterrcnn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tffasterrcnn" type="462c0819:PsiDirectoryNode" />
+              <item name="fast_rcnn" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -851,16 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fast_rcnn/train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-901">
-          <caret line="205" column="0" lean-forward="true" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
-          <folding>
-            <element signature="e#284#316#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_net.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -884,6 +873,16 @@
         <state relative-caret-position="1457">
           <caret line="98" column="41" lean-forward="false" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fast_rcnn/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1386">
+          <caret line="77" column="59" lean-forward="false" selection-start-line="77" selection-start-column="59" selection-end-line="77" selection-end-column="59" />
+          <folding>
+            <element signature="e#284#316#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
