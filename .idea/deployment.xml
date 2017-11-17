@@ -21,6 +21,25 @@
           </excludedPaths>
         </serverdata>
       </paths>
+      <paths name="serverx41">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/Faster-RCNN_TF-master" local="$PROJECT_DIR$" web="/Faster-RCNN_TF-master" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/Faster-RCNN_TF-master/data" />
+            <excludedPath path="/Faster-RCNN_TF-master/VOCdevkit" />
+            <excludedPath path="/Faster-RCNN_TF-master/VGGnet_fast_rcnn_iter_70000.ckpt" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="serverx43">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
     </serverData>
   </component>
 </project>
