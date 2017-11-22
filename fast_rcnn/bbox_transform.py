@@ -8,6 +8,7 @@
 import numpy as np
 
 def bbox_transform(ex_rois, gt_rois):
+
     ex_widths = ex_rois[:, 2] - ex_rois[:, 0] + 1.0
     ex_heights = ex_rois[:, 3] - ex_rois[:, 1] + 1.0
     ex_ctr_x = ex_rois[:, 0] + 0.5 * ex_widths
@@ -20,8 +21,28 @@ def bbox_transform(ex_rois, gt_rois):
 
     targets_dx = (gt_ctr_x - ex_ctr_x) / ex_widths
     targets_dy = (gt_ctr_y - ex_ctr_y) / ex_heights
-    targets_dw = np.log(gt_widths / ex_widths)
-    targets_dh = np.log(gt_heights / ex_heights)
+    eps = 0.000001
+    #
+    # if np.sum(gt_widths < 0) != 0:
+    #     print('gt_width')
+    #     print(gt_widths)
+    #
+    # if np.sum(ex_widths< 0) != 0:
+    #     print('ex_width')
+    #     print(ex_widths)
+    #
+    # if np.sum(gt_heights< 0) != 0:
+    #     print('gt_heights')
+    #     print(gt_heights)
+    #     print(gt_rois[:, 3])
+    #     print(gt_rois[:, 1])
+    #
+    # if np.sum(ex_heights< 0) != 0:
+    #     print('ex_heights')
+    #     print(ex_heights)
+
+    targets_dw = np.log(gt_widths / ex_widths + eps)
+    targets_dh = np.log(np.abs(gt_heights / ex_heights) + eps) ###############################################
 
     targets = np.vstack(
         (targets_dx, targets_dy, targets_dw, targets_dh)).transpose()

@@ -69,9 +69,9 @@ if __name__ == '__main__':
     print('Using config:')
     pprint.pprint(cfg)
 
-    while not os.path.exists(args.model) and args.wait:
-        print('Waiting for {} to exist...'.format(args.model))
-        time.sleep(10)
+    # while not os.path.exists(args.model) and args.wait:
+    #     print('Waiting for {} to exist...'.format(args.model))
+    #     time.sleep(10)
 
     weights_filename = os.path.splitext(os.path.basename(args.model))[0]
 
@@ -93,6 +93,7 @@ if __name__ == '__main__':
     # start a session
     saver = tf.train.Saver()
     sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=True))
+    args.model = '/home/liuml/output/faster_rcnn_end2end/voc_2007_trainval/VGGnet_fast_rcnn_iter_1000.ckpt'
     saver.restore(sess, args.model)
     print('Loading model weights from {:s}'.format(args.model))
 
